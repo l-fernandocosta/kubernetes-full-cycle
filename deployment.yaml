@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: nodeserver
-          image: "lfernandocosta/hello-node:v2"
+          image: "lfernandocosta/hello-node:v4"

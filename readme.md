@@ -34,3 +34,16 @@ Kubernetes (K8S) é um produto Open Source utilizado para automatizar a implanta
 
 - Selector 
    - Responsável por filtrar todos os pods que estão incorporados ao serviço
+
+- Target Port vs Port
+   
+   `Antes de exemplificar é necessário entender os conceitos por trás do port e targetPort`
+   
+   `Quando declaramos um port em nosso service.yaml, este será responsável pela porta do NOSSO SERVICE`
+
+   `Quando declaramos um targetPort, esta será a porta que será responsável pelo redirecionamento (container) a um dos nossos pods`
+
+   - O targetPort tem como funcionalidade redirecionar para a porta desejada dentro do meu container.
+    
+   - E.G Toda vez que acessar o port `:80` redirecionaremos usando o targetPort `:8000` que foi a porta 
+   que foi exposta no meu container.
