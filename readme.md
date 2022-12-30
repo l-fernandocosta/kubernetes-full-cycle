@@ -32,7 +32,5 @@ Kubernetes (K8S) é um produto Open Source utilizado para automatizar a implanta
 - Replica Set
    -  São replicas dos pods
 
-- Selector
+- Selector 
    - Responsável por filtrar todos os pods que estão incorporados ao serviço
-
-### Utilizando ClusterIP
