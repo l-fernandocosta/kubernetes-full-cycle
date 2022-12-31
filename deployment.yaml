@@ -16,10 +16,13 @@ spec:
     spec:
       containers:
         - name: nodeserver
-          image: "lfernandocosta/hello-node:v6.5"
+          image: "lfernandocosta/hello-node:v6.6"
           envFrom:
             - configMapRef:
                 name: nodeserver-env
+
+            - secretRef:
+                name: nodeserver-secret
           volumeMounts:
             - mountPath: "/myfamily"
               name: config 

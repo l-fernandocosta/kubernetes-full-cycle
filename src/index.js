@@ -30,7 +30,12 @@ app.get('/configmap',  (req, res) => {
   return res.json({family: text});
 })
 
+app.get('/secret',  (req, res) => {
+  const user =  process.env['USER'];
+  const password = process.env['PASSWORD'];
 
+  return res.send(`Hey, i'm ${user} and my secret password is ${password}, thanks fsociety, for keep my safe..  `)
+})
 
 app.listen(port, () => {
   console.log(`listen on ${port}`)
