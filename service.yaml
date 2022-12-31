@@ -5,10 +5,9 @@ metadata:
 spec:
   selector:
     app: nodeserver
-  type: ClusterIP
+  type: LoadBalancer
   ports:
   - name: nodeserver-service 
     port: 80
     targetPort: 3333
     protocol: TCP
-

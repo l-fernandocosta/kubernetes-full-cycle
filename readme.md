@@ -47,3 +47,14 @@ Kubernetes (K8S) é um produto Open Source utilizado para automatizar a implanta
     
    - E.G Toda vez que acessar o port `:80` redirecionaremos usando o targetPort `:8000` que foi a porta 
    que foi exposta no meu container.
+
+- NodePort
+   -  Associa uma port ( 30000 > < 32767 ) à todos os seus nodes;
+   -  Gera uma porta e libera essa porta a todos os nodes do seu cluster; 
+   -  Rara utilização
+
+
+- LoadBalancer
+   - Utilizado em cluster gerenciados;
+   - Gera um IP para você acessar sua aplicação de fora;
+   - Cluster kubernetes que está conectado a um provedor de nuvem; 

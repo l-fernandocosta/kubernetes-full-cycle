@@ -16,4 +16,39 @@ spec:
     spec:
       containers:
         - name: nodeserver
-          image: "lfernandocosta/hello-node:v4"
+          image: "lfernandocosta/hello-node:v6.5"
+          envFrom:
+            - configMapRef:
+                name: nodeserver-env
+          volumeMounts:
+            - mountPath: "/myfamily"
+              name: config 
+      volumes:
+        - name: config
+          configMap: 
+            name: configmap-family 
+            items:
+            - key: members
+              path: "family.txt"
+
+
+
+
+
+
+
+
+
+
+          # env: 
+          #   - name: NAME
+          #     valueFrom: 
+          #       configMapKeyRef:
+          #         name: nodeserver-env
+          #         key: NAME
+                  
+          #   - name: AGE
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: nodeserver-env
+          #         key: AGE
