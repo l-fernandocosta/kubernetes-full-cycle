@@ -1,16 +1,15 @@
 const fs = require('fs');
 const express = require('express');
+const date_fns =  require('date-fns');
 require('dotenv').config({path: __dirname + '/.env'});
 
 const app = express();
 const port = 3333;
 
 
-app.get('/', (req, res) => {
-  res.send(`${process.env['NAME']}}`);
-});
 
- function readTxt() {
+
+function readTxt() {
 
   const text =  fs.readFileSync(`myfamily/family.txt`, 'utf-8',(err, data) => {
     if(err) {
@@ -23,7 +22,14 @@ app.get('/', (req, res) => {
   return text;
 }
 
+let startedAt =  new Date();
 
+function Healthz() {
+  
+}
+app.get('/', (req, res) => {
+  res.send(`${process.env['NAME']}}`);
+});
 
 app.get('/configmap',  (req, res) => {
   const text =  readTxt();

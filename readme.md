@@ -58,3 +58,35 @@ Kubernetes (K8S) é um produto Open Source utilizado para automatizar a implanta
    - Utilizado em cluster gerenciados;
    - Gera um IP para você acessar sua aplicação de fora;
    - Cluster kubernetes que está conectado a um provedor de nuvem; 
+
+- Liveness Probe
+
+   - Liveness Probe usado para controlar a integridade de um aplicativo dentro do container em um pod. 
+   Quando detecta que algo está errado, ele tem a capacidade de reciclar o pod, em outras palavras, 
+   terminar aquele pod com algum problema e cria um novo
+
+   - Para utilizá-lo, basta adicionar ao seu container no arquivo .yaml
+   - e.g
+   `livenessProbe:`
+            `httpGet:`
+              `path: /configmap`
+              `port: 3333`
+
+   - No exemplo acima ☝️ Utilizamos o protocolo http, passamos o path que será verificado e a porta
+   da nossa aplicação container. 
+
+   - periodSeconds -> Intervalo de verificação -> e.g 5s (de 5 em 5 segundos irá ser realizada a verificação) 
+   - failureTreshold -> Quantas falhas são necessária para reciclar o pod
+   - timeoutSeconds -> Explicíta o tempo que determina o timeout
+   - successThreshold -> Quantos sucessos necessários para que o pod esteja ok
+
+
+- Readiness 
+   - Verifica se a sua aplicação está pronta para receber tráfego 
+   - Propriedades semalhantes ao Liveness Probe
+   - Cuidado ao utilizar Liveness e Readiness sem o Startup Probe
+
+- Startup Probe
+   - Afim de resolver os  "workarounds" para fazer liveness & readiness probes funcionarem simultâ
+   neamente, kubernetes na sua versão 1.16, chamado `startup probe`. 
+   - Funciona como o readiness, porém, no processo de inicialização do pod. 
