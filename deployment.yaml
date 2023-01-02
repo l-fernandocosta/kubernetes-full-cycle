@@ -20,26 +20,26 @@ spec:
 
           resources:
             requests:
-              cpu: 100m
+              cpu: "0.05"
               memory: 20Mi
             limits:
-              cpu: 500m 
+              cpu: "0.05"
               memory: 25Mi
 
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 3333
-            periodSeconds: 3
-            failureThreshold: 1
-            initialDelaySeconds: 10 
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: 3333
+          #   periodSeconds: 3
+          #   failureThreshold: 1
+    
 
-          startupProbe:
-            httpGet:
-              path: /healthz
-              port: 8000
-            periodSeconds: 3
-            failureTreshold: 30
+          # startupProbe:
+          #   httpGet:
+          #     path: /
+          #     port: 8000
+          #   periodSeconds: 3
+          #   failureThreshold: 10
             
           # livenessProbe:
           #   httpGet:
