@@ -90,3 +90,16 @@ Kubernetes (K8S) é um produto Open Source utilizado para automatizar a implanta
    - Afim de resolver os  "workarounds" para fazer liveness & readiness probes funcionarem simultâ
    neamente, kubernetes na sua versão 1.16, chamado `startup probe`. 
    - Funciona como o readiness, porém, no processo de inicialização do pod. 
+
+
+#### Metrics Server
+
+- Coleta as métricas em tempo real quanto recurso os pods estão consumindo naquele momento;
+- Prometheus ( Grafana );
+
+#### Entendendo a utilização de resources
+
+- Medidas CPU -> vCPU -> 1000m (milicores);
+`resources:`
+   `requests:`
+      `cpu`:  `pode receber ou em milicores ou em porcentagem. e.g 0.5 (metade)`
