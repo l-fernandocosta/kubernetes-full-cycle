@@ -59,7 +59,13 @@ spec:
           volumeMounts:
             - mountPath: "/myfamily"
               name: config 
+              readOnly: true
+            - mountPath: "/node/pvc"
+              name:  nodeserver-volume
       volumes:
+        - name: nodeserver-volume
+          persistentVolumeClaim:
+            claimName: nodeserver-pvc
         - name: config
           configMap: 
             name: configmap-family 
